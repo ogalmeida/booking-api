@@ -1,7 +1,7 @@
 {
     "name": "laravel/hotel-booking",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Core backend for booking service from hotel",
     "keywords": [
         "framework",
         "laravel"
