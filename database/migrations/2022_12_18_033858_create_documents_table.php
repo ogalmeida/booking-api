@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('number');
-            $table->enum('type', ['ID', 'DRIVE_LICENSE', 'PASSPORT']);
+            $table->enum('type', ['ID', 'DRIVER', 'PASSPORT']);
             $table->foreignId('costumer_id');
             $table->timestamps();
         });
