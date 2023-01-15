@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories;
+namespace Booking\Core\Infrastructure\Database\factory;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;

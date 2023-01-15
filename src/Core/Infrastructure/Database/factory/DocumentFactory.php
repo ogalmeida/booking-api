@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories;
+namespace Booking\Core\Infrastructure\Database\factory;
 
 use App\Models\Costumer;
 use Illuminate\Database\Eloquent\Factories\Factory;

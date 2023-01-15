@@ -9,6 +9,7 @@ use Booking\Core\Domain\Enum\DocumentTypeEnum;
 class Document
 {
     public function __construct(
+        public readonly string $uuid,
         public readonly int $number,
         public readonly DocumentTypeEnum $type,
     ) {
@@ -17,6 +18,7 @@ class Document
     public static function create(array $data): self
     {
         return new self(
+            uuid: $data['uuid'],
             number: $data['number'],
             type: DocumentTypeEnum::from($data['type']),
         );
@@ -25,6 +27,7 @@ class Document
     public function toArray(): array
     {
         return [
+            'uuid' => $this->uuid,
             'number' => $this->number,
             'type' => $this->type,
         ];

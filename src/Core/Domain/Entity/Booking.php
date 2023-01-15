@@ -7,9 +7,10 @@ namespace Booking\Core\Domain\Entity;
 use Booking\Core\Domain\Enum\BookingStatusEnum;
 use Carbon\CarbonImmutable;
 
-class Bookinng
+class Booking
 {
     public function __construct(
+        public readonly string $uuid,
         public readonly CarbonImmutable $bookedAt,
         public readonly CarbonImmutable $startAt,
         public readonly CarbonImmutable $endAt,
@@ -20,6 +21,7 @@ class Bookinng
     public static function create(array $data): self
     {
         return new self(
+            uuid: $data['uuid'],
             bookedAt: self::generateDateAttribute($data['booked_at']),
             startAt: self::generateDateAttribute($data['start_at']),
             endAt: self::generateDateAttribute($data['end_at']),
@@ -30,6 +32,7 @@ class Bookinng
     public function toArray(): array
     {
         return [
+            'uuid' => $this->uuid,
             'booked_at' => $this->bookedAt,
             'start_at' => $this->startAt,
             'end_at' => $this->endAt,

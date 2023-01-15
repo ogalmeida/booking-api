@@ -1,5 +1,7 @@
 <?php
 
+namespace Booking\Core\Infrastructure\Database\migrations;
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,12 +15,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('booking', function (Blueprint $table) {
+        Schema::create('room', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('booked_at');
-            $table->dateTime('start_at');
-            $table->dateTime('end_at');
-            $table->enum('status', ['CREATED', 'CANCELED', 'PAID', 'FINISHED']);
+            $table->uuid();
+            $table->string('name');
+            $table->unsignedInteger('level');
+            $table->boolean('is_avaliable');
+            $table->unsignedDouble('price');
+            $table->timestamps();
         });
     }
 
@@ -29,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('booking');
+        Schema::dropIfExists('room');
     }
 };

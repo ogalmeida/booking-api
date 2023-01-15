@@ -11,4 +11,6 @@ interface BookingRepositoryInterface
     public function create(Booking $booking): void;
 
     public function find(int $id): Booking;
+
+    public function cancel(int $id): bool;
 }

@@ -10,6 +10,7 @@ use Booking\Core\Domain\ValueObject\Document;
 class Costumer
 {
     public function __construct(
+        public readonly string $uuid,
         public readonly string $name,
         public readonly string $surname,
         public readonly string $email,
@@ -20,6 +21,7 @@ class Costumer
     public static function create(array $data): self
     {
         return new self(
+            uuid: $data['uuid'],
             name: $data['name'],
             surname: $data['surname'],
             email: $data['email'],
@@ -30,6 +32,7 @@ class Costumer
     public function toArray(): array
     {
         return [
+            'uuid' => $this->uuid,
             'name' => $this->name,
             'surname' => $this->surname,
             'email' => $this->email,

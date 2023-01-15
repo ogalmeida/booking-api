@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders;
+namespace Booking\Core\Infrastructure\Database\seeders;
 
 use App\Models\Costumer;
 use App\Models\Document;
